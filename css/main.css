@@ -584,6 +584,12 @@ body {
   margin-bottom: 12px;
 }
 
+@media screen and (min-width: 768px) {
+  .modal__text {
+    font-size: 20px;
+  }
+}
+
 .modal__form-field {
   position: relative;
   display: -webkit-box;
@@ -643,6 +649,13 @@ body {
   line-height: 1.16;
   color: var(--main-text-color);
   margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__agreement {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .modal__checkbox {

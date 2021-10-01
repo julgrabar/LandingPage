@@ -61,11 +61,13 @@
 
 .modal__text {
   font-weight: 700;
-  // font-size: 20px;
+
   font-size: 12px;
   line-height: 1.15;
   text-align: center;
-
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
   color: var(--main-title-color);
   margin-bottom: 12px;
 }
@@ -120,12 +122,14 @@
   border-radius: 4px;
 }
 .modal__agreement {
-  // font-size: 14px;
-  // line-height: 1.71;
   font-size: 12px;
   line-height: 1.16;
   color: var(--main-text-color);
   margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .modal__checkbox {
