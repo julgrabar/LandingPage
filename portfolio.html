@@ -18,14 +18,14 @@
 
                 <ul class="nav__menu">
                     <li class="nav__item"><a href="./index.html" class="nav__link ">Студия</a></li>
-                    <li class="nav__item"><a href="./portfolio.html" class="nav__link nav__link--opened">Портфолио</a></li>
+                    <li class="nav__item"><a href="./portfolio.html" class="nav__link current">Портфолио</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
                 </ul>
             </nav>
         
             <ul class="contacts">
-                <li class="contacts__item">
-                    <a href="mailto:info@devstudio.com" class="contacts__link contacts__item--mail">
+                <li class="contacts__item contacts__item--mail">
+                    <a href="mailto:info@devstudio.com" class="contacts__link">
                         <svg class="contacts__icon" width="16" height="12">
                             <use href="./images/sprite.svg#icon-mail"></use>
                         </svg>
@@ -41,20 +41,62 @@
                     </a>
                 </li>
             </ul>
+        <button type="button" class="menu-open" data-menu-open>
+            <svg class="menu-open__icon" width="40" height="40">
+                <use href="./images/sprite.svg#icon-menu"></use>
+            </svg>
+        </button>
         </div>
+        
+        <div class="mob-menu is-hidden" data-menu>
+            <div class="container">
+            <button type="button" class="menu-close" data-menu-close>
+                <svg width="40" height="40" class="menu__icon--close">
+                    <use href="./images/sprite.svg#icon-close-m"></use>
+                </svg>
+            </button>
+            <div class="mob-menu__top">
+            <ul class="mob-menu__list">
+                <li class="mob-menu__item">
+                    <a class="mob-menu__link " href="./index.html">Студия</a>
+                </li>
+                <li class="mob-menu__item">
+                    <a class="mob-menu__link current--menu" href="./portfolio.html">Портфолио</a>
+                </li>
+                <li class="mob-menu__item">
+                    <a class="mob-menu__link" href="#">Контакты</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mob-menu__bottom">
+            <a class="mob-menu__tel" href="tel:+380441111111">+38 096 111 11 11</a>
+            <a href="mailto:info@devstudio.com" class="mob-menu__mail">info@devstudio.com</a>
+            <ul class="mob-menu__contacts-list">
+                <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Instagram</a></li>
+                <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Twitter</a></li>
+                <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Facebook</a></li>
+                <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Linkedin</a></li>
+        
+            </ul>
+        </div>
+        </div>
+        </div>
+    </div>
     </header>
 
     <main>
         <section class="section">
             <div class="container">
             <h1 class="visually-hidden">Проекты</h1>
-            <ul class="filter">
+            <div class="filter-container">
+            <ul class="filter mob-filter">
                 <li class="filter__item"><button type="button" class="filter__button">Все</button></li>
                 <li class="filter__item"><button type="button" class="filter__button">Веб-сайты</button></li>
                 <li class="filter__item"><button type="button" class="filter__button">Приложения</button></li>
                 <li class="filter__item"><button type="button" class="filter__button">Дизайн</button></li>
                 <li class="filter__item"><button type="button" class="filter__button">Маркетинг</button></li>
             </ul>
+        </div>
             <ul class="projects">
                 <li class="project__card">
                     <a href="#" class="project__link">
@@ -308,5 +350,6 @@
         </form>
         </div>
     </footer>
+    <script src="./js/menu.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
   position: relative;
   padding: 0 15px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .nav {
@@ -26,12 +27,11 @@
 .contacts {
   display: none;
   margin-left: auto;
-  padding: 21px 0;
   @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
   @media screen and (min-width: 1200px) {
+    display: flex;
     flex-direction: row;
     padding: 32px 0;
   }
@@ -64,7 +64,7 @@
   &:focus {
     color: var(--accent-color);
   }
-  &:not(.nav__link--opened)::after {
+  &:not(.current)::after {
     content: "";
 
     position: absolute;
@@ -84,24 +84,20 @@
   &:focus::after {
     transform: scaleX(1);
   }
-  &--opened {
-    position: relative;
-    color: var(--accent-color);
-  }
+}
 
-  &--opened::after {
-    content: "";
+.current::after {
+  content: "";
 
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 
-    display: block;
-    height: 4px;
-    width: 100%;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-  }
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 .contacts__icon {
@@ -165,14 +161,21 @@
   }
 }
 .mob-menu {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   background-color: #ffffff;
   top: 0;
-  right: 0;
-  padding-top: 48px;
-  padding-left: 40px;
+  padding: 48px 0 48px 40px;
+  z-index: 1;
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0;
+  }
 }
 .mob-menu__link {
   font-weight: 500;
@@ -182,12 +185,19 @@
 
   color: #212121;
 }
+.current {
+  position: relative;
+  color: var(--accent-color);
+  &--menu {
+    color: var(--accent-color);
+  }
+}
 .mob-menu__item:not(:last-child) {
   margin-bottom: 32px;
 }
 .mob-menu__list {
   display: block;
-  margin-bottom: 302px;
+  // margin-bottom: 302px;
 }
 .mob-menu__tel {
   display: block;
@@ -212,7 +222,7 @@
 }
 .menu-close {
   position: absolute;
-  top: 21px;
+  top: -30px;
   right: 25px;
 
   display: flex;
@@ -223,6 +233,13 @@
   background-color: #ffffff;
 
   cursor: pointer;
+}
+
+.menu__icon--close {
+  .menu-close:hover &,
+  .menu-close:focus & {
+    fill: var(--accent-color);
+  }
 }
 .mob-menu__contacts-list {
   display: flex;
@@ -256,9 +273,6 @@
   }
 }
 .menu-open {
-  position: absolute;
-  top: 10px;
-  right: 15px;
   border: none;
   background: none;
   @media screen and (min-width: 768px) {

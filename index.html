@@ -17,7 +17,7 @@
                 <a href="/" class="nav__logo"><span class="blue-logo">Web</span>Studio</a>
  
                 <ul class="nav__menu">
-                    <li class="nav__item"><a href="./index.html" class="nav__link nav__link--opened">Студия</a></li>
+                    <li class="nav__item"><a href="./index.html" class="nav__link current">Студия</a></li>
                     <li class="nav__item"><a href="./portfolio.html" class="nav__link">Портфолио</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
                 </ul> 
@@ -41,29 +41,34 @@
                     </a>
                 </li>
             </ul>
-        </div>
-        <button class="menu-open" data-menu-open>
+            <button class="menu-open" data-menu-open>
             <svg class="menu-open__icon" width="40" height="40">
                 <use href="./images/sprite.svg#icon-menu"></use>
             </svg>
         </button>
-        <div class="mob-menu is-hidden" data-menu>
-                <button class="menu-close" data-menu-close>
-                    <svg width="40" height="40" class="menu__icon--close">
-                        <use href="./images/sprite.svg#icon-close-m"></use>
-                    </svg>
-                </button>
+        </div>
+        
+    <div class="mob-menu is-hidden" data-menu>
+        <div class="container">
+            <button type="button" class="menu-close" data-menu-close>
+                <svg width="40" height="40" class="menu__icon--close">
+                    <use href="./images/sprite.svg#icon-close-m"></use>
+                </svg>
+            </button>
+            <div class="mob-menu__top">
                 <ul class="mob-menu__list">
                     <li class="mob-menu__item">
-                        <a class="mob-menu__link" href="">Студия</a>
+                        <a class="mob-menu__link " href="./index.html">Студия</a>
                     </li>
                     <li class="mob-menu__item">
-                        <a class="mob-menu__link" href="">Портфолио</a>
+                        <a class="mob-menu__link current--menu" href="./portfolio.html">Портфолио</a>
                     </li>
                     <li class="mob-menu__item">
-                        <a class="mob-menu__link" href="">Контакты</a>
+                        <a class="mob-menu__link" href="#">Контакты</a>
                     </li>
                 </ul>
+            </div>
+            <div class="mob-menu__bottom">
                 <a class="mob-menu__tel" href="tel:+380441111111">+38 096 111 11 11</a>
                 <a href="mailto:info@devstudio.com" class="mob-menu__mail">info@devstudio.com</a>
                 <ul class="mob-menu__contacts-list">
@@ -71,10 +76,12 @@
                     <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Twitter</a></li>
                     <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Facebook</a></li>
                     <li class="mob-menu__contacts-item"><a href="#" class="mob-menu__contacts-link">Linkedin</a></li>
-                    
+    
                 </ul>
             </div>
         </div>
+    </div>
+    </div>
     </header>
     <main>
          <section class="section hero">
@@ -131,15 +138,27 @@
                 <h2 class="services__title">Чем мы занимаемся</h2>
                 <ul class="services">
                     <li class="services__item">
-                        <img src="./images/box1.png" alt="Пишет код" width="370">
+                        <picture>
+                            <source srcset="./images/services/imgservice1.jpg    1x,
+                               ./images/services/imgservice1-2x.jpg 2x" media="(min-width:1200px)" />
+                            <img src="./images/services/imgservice1.jpg" alt="Десктопные приложения" />
+                        </picture>
                         <p class="services__text">Десктопные приложения</p>
                     </li>
                     <li class="services__item">
-                        <img src="./images/box2.png" alt="Делает адаптивную верстку" width="370">
+                        <picture>
+                            <source srcset="./images/services/imgservice2.jpg    1x,
+                                ./images/services/imgservice2-2x.jpg 2x" media="(min-width:1200px)" />
+                            <img src="./images/services/imgservice2.jpg" alt="Десктопные приложения" />
+                        </picture>
                         <p class="services__text">Мобильные приложения</p>
                     </li>
                     <li class="services__item">
-                        <img src="./images/box3.png" alt="Создает дизайн" width="370">
+                        <picture>
+                            <source srcset="./images/services/imgservice3.jpg    1x,
+                                ./images/services/imgservice3-2x.jpg 2x" media="(min-width:1200px)" />
+                            <img src="./images/services/imgservice3.jpg" alt="Десктопные приложения" />
+                        </picture>
                         <p class="services__text">Дизайнерские решения</p>
                     </li>
                 </ul>

@@ -1,9 +1,17 @@
+.clients {
+  margin-left: -30px;
+  margin-top: -30px;
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
 .clients__list {
   display: flex;
 
   flex-wrap: wrap;
-  margin-right: -30px;
-  margin-bottom: -30px;
   @media screen and (min-width: 1200px) {
     flex-wrap: nowrap;
   }
@@ -12,7 +20,7 @@
   display: flex;
   justify-content: center;
 
-  padding: 15px 31px;
+  padding: 15px 0;
   border: 1px solid #afb1b8;
   border-radius: 4px;
   transition: border 250ms var(--cubic);
@@ -32,12 +40,19 @@
 }
 .clients__item {
   flex-basis: calc((100% - 60px) / 2);
-  margin-right: 30px;
-  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
+  align-self: center;
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 90px) / 3);
   }
+  @media screen and (min-width: 1200px) {
+    margin-top: 0;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
-// .clients__item:not(:last-child) {
-//   margin-right: 30px;
-// }
+// // .clients__item:not(:last-child) {
+// //   margin-right: 30px;
+// // }
